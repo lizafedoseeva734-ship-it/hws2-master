@@ -1,3 +1,4 @@
+import { Divider } from '@mui/material';
 import { useState } from 'react';
 import s2 from '../../s1-main/App.module.css';
 import Affairs from './affairs/Affairs';
@@ -65,13 +66,14 @@ function HW2() {
     const [filter, setFilter] = useState<FilterType>('all');
 
     const filteredAffairs = filterAffairs(affairs, filter);
- const deleteAffairCallback = (_id: number) => {
-     setAffairs(deleteAffair(affairs, _id));
- };
+    const deleteAffairCallback = (_id: number) => {
+        setAffairs(deleteAffair(affairs, _id));
+    };
 
     return (
         <div id={'hw2'}>
             <div className={s2.hwTitle}>Homework #2</div>
+            <Divider sx={{ mt: 4, mb: 4 }} />
             <div className={s2.hw}>
                 <Affairs
                     data={filteredAffairs}
@@ -79,6 +81,7 @@ function HW2() {
                     deleteAffairCallback={deleteAffairCallback}
                     filter={filter}
                 />
+                <Divider sx={{ mt: 9, mb: 4.25 }} />
             </div>
         </div>
     );

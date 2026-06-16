@@ -1,36 +1,56 @@
 .button {
+    font-family: 'Montserrat', sans-serif;
+
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+    border-radius: 3px;
+    padding: 5px 24px;
+    width: 132px;
+    height: 30px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.42857;
+    color: #fff;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+.button:not(.disabled):hover,
+.button:not(.disabled):focus {
+    transform: scale(1.05);
+    outline: none;
 }
 
 .disabled {
+    color: #002e5c;
+    background: #004d99;
+    opacity: 0.5;
 }
 
 .secondary {
+    border: 1px solid #06c;
+    border-radius: 3px;
+    padding: 5px 24px;
+    width: 176px;
+    height: 30px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.42857;
+    color: #06c;
+    background: transparent;
 }
 
 .default {
+    background: #06c;
 }
 
 .red {
-}
-
-.default:hover {
-}
-
-.red:hover {
-}
-
-.secondary:hover {
+    width: 130px;
+    background: #cc1439;
 }
 
 
-.default:active {
-}
 
-.secondary:active {
-}
-
-.red:active {
-}
-
-.button:disabled {
-}

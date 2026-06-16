@@ -1,20 +1,44 @@
-.input:focus {
+input {
+    border: 1px solid #d1d1d1;
+    border-radius: 5px;
+    width: 372px;
+    height: 36px;
 }
 
-.input {
+.input:focus {
+    border-color: #964f9b;
+    outline: none;
+    caret-color: #964f9b;
+    color: #964f9b;
 }
 
 .inputWrapper {
 }
 
 .superInput {
+    border-color: #964f9b;
+    outline: none;
+    caret-color: #964f9b;
+    color: #964f9b;
 }
 
 .errorInput {
+    border-color: #9b4f4f;
+    outline: none;
+    caret-color: #9b4f4f;
+    color: #9b4f4f;
 }
 
 .errorInput:focus {
+    border-color: #9b4f4f;
+    outline: none;
+    caret-color: #9b4f4f;
+    color: #9b4f4f;
 }
 
 .error {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    color: #cc1439;
 }

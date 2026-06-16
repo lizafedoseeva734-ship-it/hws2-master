@@ -1,31 +1,65 @@
 .message {
-
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* прижимаем всё сообщение вправо */
+    margin-bottom: 20px;
+    width: 100%;
 }
 
 .imageAndText {
-
+    display: flex;
+    flex-direction: row-reverse; /* переворачиваем: аватарка справа, текст слева */
+    align-items: flex-end;
+    gap: 12px;
 }
 
 .imageAndText img {
-
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .text {
-
+    position: relative;
+    background-color: #0066cc; /* синий цвет бабла */
+    color: #ffffff;
+    padding: 12px 16px;
+    border-radius: 8px;
+    max-width: 500px;
+    box-shadow: 0px 5px 20px rgba(29, 33, 38, 0.03);
 }
 
+/* Хвостик для правого синего бабла */
 .text:after {
-
+    content: '';
+    position: absolute;
+    right: -8px;
+    bottom: 10px;
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid #0066cc; /* цвет совпадает с фоном бабла */
 }
 
 .name {
-
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 4px;
+    text-align: right;
 }
 
 .messageText {
-
+    font-family: inherit;
+    font-size: 14px;
+    white-space: pre-wrap; /* чтобы текст переносился */
+    margin: 0;
 }
 
 .time {
-
+    font-size: 12px;
+    color: #000000;
+    margin-top: 4px;
+    padding-right: 52px; /* выравниваем по центру под аватаркой */
 }

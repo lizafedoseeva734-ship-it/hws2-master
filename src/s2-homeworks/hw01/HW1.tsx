@@ -1,3 +1,4 @@
+import { Divider } from '@mui/material';
 import s2 from '../../s1-main/App.module.css';
 import avatar from './avatar.png';
 import FriendMessage from './friend-message/FriendMessage';
@@ -53,6 +54,7 @@ const HW1 = () => {
     return (
         <div id={'hw1'}>
             <div className={s2.hwTitle}>Homework #1</div>
+            <Divider sx={{ mt: 4.5, mb: 3 }} />
             <div className={s2.hw}>
                 {/*проверка отображения (не менять)*/}
                 <div>
@@ -62,6 +64,7 @@ const HW1 = () => {
 
                 {/*для автоматической проверки дз (не менять)*/}
                 <MessageSender M={Message} />
+                <Divider sx={{ mt: 4, mb: 5 }} />
             </div>
         </div>
     );

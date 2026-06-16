@@ -1,3 +1,4 @@
+import { Divider } from '@mui/material';
 import { useState } from 'react';
 import { v1 } from 'uuid';
 import s2 from '../../s1-main/App.module.css';
@@ -46,6 +47,7 @@ const HW3 = () => {
     return (
         <div id={'hw3'}>
             <div className={s2.hwTitle}>Homework #3</div>
+            <Divider sx={{ mt: 1.75, mb: 4 }} />
             {/*для автоматической проверки дз (не менять)*/}
 
             <div className={s2.hw}>
