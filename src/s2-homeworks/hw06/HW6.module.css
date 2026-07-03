@@ -1,5 +1,11 @@
 .buttonsContainer {
+  display: flex;
+  gap: 14px;
+
+  margin-top: 18px;
 }
 
 .editableSpanContainer {
+  margin-top: 28px;
+  margin-bottom: 12px;
 }
