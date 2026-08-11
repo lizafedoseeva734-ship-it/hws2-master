@@ -5,8 +5,7 @@ const SuperRange: React.FC<SliderProps> = (props) => {
   return (
     <Slider
       sx={{
-        width: '100%',
-        color: '#00c853',
+        width: '100px',
 
         '& .MuiSlider-thumb': {
           width: 12,
@@ -20,7 +19,7 @@ const SuperRange: React.FC<SliderProps> = (props) => {
         '& .MuiSlider-rail': {
           height: 3,
           opacity: 1,
-          backgroundColor: '#999',
+          backgroundColor: '#9999997e',
         },
       }}
       {...props} // отдаём слайдеру пропсы если они есть (value например там внутри)
