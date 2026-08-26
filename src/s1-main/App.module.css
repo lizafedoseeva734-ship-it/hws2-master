@@ -1,11 +1,21 @@
 .App {
-    --header_height: 60px;
+  --header_height: 60px;
+  min-height: 100vh;
+  background-color: var(--background);
+  color: var(--color);
 }
 
 .hw {
-
+  padding: 20px 35px;
+  min-height: 180px;
+  background-color: var(--background);
+  color: var(--color);
 }
 
 .hwTitle {
-
+  padding: 15px 35px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color);
 }
