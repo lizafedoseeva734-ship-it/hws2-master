@@ -1,8 +1,11 @@
 import axios from 'axios';
 import { useState } from 'react';
+
 import s2 from '../../s1-main/App.module.css';
 import SuperButton from '../hw04/common/c2-SuperButton/SuperButton';
+
 import s from './HW13.module.css';
+
 import success200 from './images/200.svg';
 import error400 from './images/400.svg';
 import error500 from './images/500.svg';
@@ -12,7 +15,7 @@ import error from './images/error.svg';
  * 1 - дописать функцию send
  * 2 - дизэйблить кнопки пока идёт запрос
  * 3 - сделать стили в соответствии с дизайном
- * */
+ */
 
 const HW13 = () => {
   const [code, setCode] = useState('');
@@ -23,40 +26,38 @@ const HW13 = () => {
 
   const send = (x?: boolean | null) => () => {
     const url =
-      x === null
-        ? 'https://xxxxxx.ccc' // имитация запроса на не корректный адрес
-        : 'https://samurai.it-incubator.io/api/3.0/homework/test';
+      x === null ? 'https://xxxxxx.ccc' : 'https://samurai.it-incubator.io/api/3.0/homework/test';
 
     setCode('');
     setImage('');
     setText('');
     setInfo('...loading');
     setIsLoading(true);
+
     axios
       .post(url, { success: x })
       .then((res) => {
         setCode('Код 200!');
-        setText('код 200 - обычно означает что скорее всего все ок)');
-        setInfo('...всё ок)');
+        setText('...всё ок)');
+        setInfo('код 200 - обычно означает что скорее всего все ок)');
         setImage(success200);
 
         console.log(res);
-        // дописать
       })
       .catch((e) => {
         if (e.response?.status === 400) {
           setCode('Код 400!');
-          setText(
-            'Ты не отправил success в body вообще! ошибка 400 - обычно означает что скорее всего фронт отправил что-то не то на бэк!',
+          setText('Ты не отправил success в body вообще!');
+          setInfo(
+            'ошибка 400 - обычно означает что скорее всего фронт отправил что-то не то на бэк!',
           );
-          setInfo('Ошибка 400!');
           setImage(error400);
         } else if (e.response?.status === 500) {
           setCode('Код 500!');
-          setText(
-            'эмитация ошибки на сервере ошибка 500 обычно означает что что-то сломалось на сервере, например база данных)',
+          setText('эмитация ошибки на сервере');
+          setInfo(
+            'ошибка 500 обычно означает что что-то сломалось на сервере, например база данных)',
           );
-          setInfo('Ошибка 500!');
           setImage(error500);
         } else {
           setCode('Error!');
@@ -76,15 +77,10 @@ const HW13 = () => {
 
       <div className={s2.hw}>
         <div className={s.buttonsContainer}>
-          <SuperButton
-            id={'hw13-send-true'}
-            onClick={send(true)}
-            disabled={isLoading}
-
-            // дописать
-          >
+          <SuperButton id={'hw13-send-true'} onClick={send(true)} disabled={isLoading}>
             Send true
           </SuperButton>
+
           <SuperButton
             id={'hw13-send-false'}
             onClick={send(false)}
@@ -93,21 +89,21 @@ const HW13 = () => {
           >
             Send false
           </SuperButton>
+
           <SuperButton
             id={'hw13-send-undefined'}
             onClick={send(undefined)}
             xType={'secondary'}
             disabled={isLoading}
-            // дописать
           >
             Send undefined
           </SuperButton>
+
           <SuperButton
             id={'hw13-send-null'}
-            onClick={send(null)} // имитация запроса на не корректный адрес
+            onClick={send(null)}
             xType={'secondary'}
             disabled={isLoading}
-            // дописать
           >
             Send null
           </SuperButton>
@@ -122,9 +118,11 @@ const HW13 = () => {
             <div id={'hw13-code'} className={s.code}>
               {code}
             </div>
+
             <div id={'hw13-text'} className={s.text}>
               {text}
             </div>
+
             <div id={'hw13-info'} className={s.info}>
               {info}
             </div>

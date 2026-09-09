@@ -1,7 +1,11 @@
 .tech {
-
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 2px;
 }
 
 .loading {
-
+  height: 20px;
+  font-size: 12px;
+  color: #888;
 }
